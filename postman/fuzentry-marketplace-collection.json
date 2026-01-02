@@ -1,0 +1,212 @@
+{
+  "info": {
+    "name": "Fuzentry - AWS Marketplace API",
+    "description": "Production API endpoints for governed AI orchestration with folder-scoped memory isolation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "fuzentry-marketplace-v1.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.tailoredtechworks.net",
+      "type": "string"
+    },
+    {
+      "key": "jwtToken",
+      "value": "YOUR_JWT_TOKEN",
+      "type": "string",
+      "description": "Cognito JWT token from authentication"
+    },
+    {
+      "key": "apiKey",
+      "value": "YOUR_API_KEY",
+      "type": "string",
+      "description": "AWS Marketplace provisioned API key"
+    },
+    {
+      "key": "tenantId",
+      "value": "YOUR_TENANT_ID",
+      "type": "string",
+      "description": "Your customer ID from AWS Marketplace subscription"
+    }
+  ],
+  "item": [
+    {
+      "name": "0. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        },
+        "description": "Verify API connectivity (no authentication required)"
+      },
+      "response": []
+    },
+    {
+      "name": "Orchestration",
+      "item": [
+        {
+          "name": "Single Folder Orchestration",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}",
+                "type": "text"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"What are the key risk factors in this clinical note?\",\n  \"folders\": [\n    {\n      \"id\": \"clinical-001\",\n      \"name\": \"Patient Clinical Records\",\n      \"context\": \"HIPAA-compliant clinical documentation\"\n    }\n  ],\n  \"tenantId\": \"{{tenantId}}\",\n  \"metadata\": {\n    \"userId\": \"dr.smith@hospital.com\",\n    \"action\": \"clinical_analysis\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["messages"]
+            },
+            "description": "Single-folder AI orchestration with automatic audit trail generation"
+          },
+          "response": []
+        },
+        {
+          "name": "Multi-Expert Synthesis (3 Experts)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}",
+                "type": "text"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"How should we structure this M&A negotiation to maximize value while maintaining ethical standards?\",\n  \"folders\": [\n    {\n      \"id\": \"communication-expert\",\n      \"name\": \"Joel Schwartzberg - Communication Expert\"\n    },\n    {\n      \"id\": \"negotiation-expert\",\n      \"name\": \"Chris Voss - Negotiation Expert\"\n    },\n    {\n      \"id\": \"economic-strategy\",\n      \"name\": \"John Perkins - Economic Strategy\"\n    }\n  ],\n  \"tenantId\": \"{{tenantId}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/messages",
+              "host": ["{{baseUrl}}"],
+              "path": ["messages"]
+            },
+            "description": "GEDDE orchestration - query 3 experts simultaneously and receive synthesized answer with arbitration logic"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Folders & Metadata",
+      "item": [
+        {
+          "name": "List Available Folders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}",
+                "type": "text"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/folders",
+              "host": ["{{baseUrl}}"],
+              "path": ["folders"]
+            },
+            "description": "List all folders available in your tenant with their governance policies"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usage & Billing",
+      "item": [
+        {
+          "name": "Get Current Usage",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}",
+                "type": "text"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/usage/current",
+              "host": ["{{baseUrl}}"],
+              "path": ["usage", "current"]
+            },
+            "description": "Check your current billing period usage and estimated costs"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Usage History",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{jwtToken}}",
+                "type": "text"
+              },
+              {
+                "key": "x-api-key",
+                "value": "{{apiKey}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/usage/history?limit=30",
+              "host": ["{{baseUrl}}"],
+              "path": ["usage", "history"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "30",
+                  "description": "Number of records to return"
+                }
+              ]
+            },
+            "description": "Retrieve historical usage data for your account"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
