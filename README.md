@@ -1,13 +1,13 @@
 # Fuzentry - AWS Marketplace Getting Started
 
-Fuzentry is an enterprise AI orchestration platform offered via AWS Marketplace. It provides router-level governance, folder-scoped memory isolation, and immutable audit trails for regulated workloads in healthcare, legal, and financial services.
+Fuzentry™ is an enterprise AI orchestration platform offered via AWS Marketplace. It provides single-point entry governance, folder-scoped memory isolation, and immutable audit trails for regulated workloads in healthcare, legal, and financial services.
 
 Quick links
 - Quickstart: QUICKSTART.md
 - Troubleshooting: TROUBLESHOOTING.md
 - Postman collection: postman/fuzentry-marketplace-collection.json
 
-Why Fuzentry (brief)
+Why Fuzentry™ (brief)
 - ✅ Router-level governance: central policy enforcement for all AI requests
 - ✅ Folder-scoped memory isolation: data never crosses folder boundaries
 - ✅ Immutable audit trails: tamper-evident logs retained for regulatory compliance
