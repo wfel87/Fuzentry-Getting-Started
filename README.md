@@ -1,2 +1,2 @@
-# Fuzentry--getting-started
+# Fuzentry-getting-started
 Customer onboarding resources for Fuzentry AWS Marketplace integration
