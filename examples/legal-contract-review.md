@@ -8,7 +8,7 @@ Upload SPA excerpts and ask for combined legal, risk, and negotiation perspectiv
 
 ## 3. API Request (curl)
 ```bash
-curl -X POST https://api.tailoredtechworks.net/messages \
+curl -X POST https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod/messages \
   -H "Authorization: Bearer ${JWT_TOKEN}" \
   -H "x-api-key: ${API_KEY}" \
   -H "Content-Type: application/json" \
@@ -45,7 +45,7 @@ curl -X POST https://api.tailoredtechworks.net/messages \
 ```ts
 import fetch from 'node-fetch';
 
-const API_BASE = process.env.API_BASE || 'https://api.tailoredtechworks.net';
+const API_BASE = process.env.API_BASE || 'https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod';
 const JWT = process.env.JWT_TOKEN;
 const API_KEY = process.env.API_KEY;
 

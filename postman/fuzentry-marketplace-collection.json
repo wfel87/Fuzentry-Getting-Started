@@ -8,7 +8,7 @@
   "variable": [
     {
       "key": "baseUrl",
-      "value": "https://api.tailoredtechworks.net",
+      "value": "https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod",
       "type": "string"
     },
     {

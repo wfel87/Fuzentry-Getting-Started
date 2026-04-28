@@ -8,7 +8,7 @@
 
 ## 2. Get API Credentials
 
-- API Endpoint: `https://api.tailoredtechworks.net/messages`
+- API Endpoint: `https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod/messages`
 - Product Code: `7hg9wmc6aq5kh133mhntl8dz2`
 
 ## 3. Authenticate and Test
@@ -22,11 +22,11 @@
 Run:
 
 ```bash
-curl -X GET https://api.tailoredtechworks.net/usage/current \
+curl -X GET https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod/usage/current \
   -H "Authorization: Bearer {YOUR_JWT_TOKEN}" \
   -H "x-api-key: {YOUR_API_KEY}"
 ```
 
 ## Support
 
-support@tailoredtechworks.net
+support@fuzentry.com

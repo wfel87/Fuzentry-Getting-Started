@@ -32,9 +32,9 @@ Industry examples included
 Resources
 - Postman workspace: `postman/fuzentry-marketplace-collection.json`
 - API docs: https://docs.fuzentry.ai
-- Support: support@tailoredtechworks.net
+- Support: support@fuzentry.com
 
 Support & SLA
-- Production support: enterprise SLA available; contact support@tailoredtechworks.net
+- Production support: enterprise SLA available; contact support@fuzentry.com
 # Fuzentry-getting-started
 Customer onboarding resources for Fuzentry AWS Marketplace integration

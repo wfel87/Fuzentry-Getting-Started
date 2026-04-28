@@ -8,7 +8,7 @@ Applicant submits passport, utility bill, and bank statement. The system extract
 
 ## 3. API Request (curl)
 ```bash
-curl -X POST https://api.tailoredtechworks.net/messages \
+curl -X POST https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod/messages \
   -H "Authorization: Bearer ${JWT_TOKEN}" \
   -H "x-api-key: ${API_KEY}" \
   -H "Content-Type: application/json" \
@@ -51,7 +51,7 @@ curl -X POST https://api.tailoredtechworks.net/messages \
 import requests
 import os
 
-API_BASE = os.getenv('API_BASE', 'https://api.tailoredtechworks.net')
+API_BASE = os.getenv('API_BASE', 'https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod')
 JWT = os.getenv('JWT_TOKEN')
 API_KEY = os.getenv('API_KEY')
 
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
 ## 9. Audit Trail Retrieval
 ```bash
-curl -X GET "https://api.tailoredtechworks.net/audit/{auditId}" \
+curl -X GET "https://3h5bna4rlb.execute-api.us-east-1.amazonaws.com/prod/audit/{auditId}" \
   -H "Authorization: Bearer ${JWT_TOKEN}" \
   -H "x-api-key: ${API_KEY}"
 ```

@@ -15,4 +15,4 @@
 - If >48 hours, contact support with your tenant ID
 
 ## Support
-- support@tailoredtechworks.net
+- support@fuzentry.com
